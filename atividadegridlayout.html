@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout CSS Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: #1a4a4a;
+    }
+
+    body {
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+
+    .container {
+      display: grid;
+      height: 98vh;
+      gap: 10px;
+      grid-template-columns: 250px repeat(3, 1fr);
+      grid-template-rows: 40px 2fr 1.5fr 80px;
+      grid-template-areas:
+        "navbar navbar navbar navbar"
+        "sidebar main main main"
+        "sidebar content1 content2 content3"
+        "sidebar footer footer footer";
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      letter-spacing: 1px;
+    }
+
+    .navbar {
+      grid-area: navbar;
+      background-color: #a8f5e5;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #00ffff;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: #80ffff;
+    }
+
+    .content1 {
+      grid-area: content1;
+      background-color: #80f5d4;
+    }
+
+    .content2 {
+      grid-area: content2;
+      background-color: #5cf2d0;
+    }
+
+    .content3 {
+      grid-area: content3;
+      background-color: #80f5a8;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #1de9b6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box navbar">NAVBAR</div>
+    <div class="box sidebar">SIDEBAR</div>
+    <div class="box main">MAIN</div>
+    <div class="box content1">CONTENT 1</div>
+    <div class="box content2">CONTENT 2</div>
+    <div class="box content3">CONTENT 3</div>
+    <div class="box footer">FOOTER</div>
+  </div>
+
+</body>
+</html>
